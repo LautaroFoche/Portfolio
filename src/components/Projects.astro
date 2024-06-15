@@ -1,39 +1,46 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import Python from "./icons/Python.astro"
+import PowerBI from "./icons/PowerBI.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import SQL from "./icons/SQL.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  PYTHON: {
+    name: "Python",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Python,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
+  POWERBI: {
+    name: "Power BI",
     class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    icon: PowerBI,
+  },
+  SQL: {
+    name: "SQL Server",
+    class: "bg-[#ffffff] text-black",
+    icon: SQL,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Oportunidad de mejoras y adquisicion de talentos de NBA",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+      "Proyecto final de Henry. Analisis sobre el rendimiento y salud de jugadores de la NBA, ademas, identificacion de talentos emergentes para la compra de los mismos.",
+    link: "",
+    github: "https://github.com/Floryofre/SmartPro_Analytics",
     image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.PYTHON, TAGS.POWERBI, TAGS.SQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Expansion estrategica de laboratorio BioGenesys",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
+      "Proyecto de Henry. Analisis sobre la pandemia de COVID-19 para la expansion de un laboratorio de vacunacion en Latinoamerica.",
+    link: "",
+    github: "https://github.com/LautaroFoche/Expansion-Biogenesys",
     image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.PYTHON, TAGS.POWERBI],
   },
 ]
 ---
@@ -44,7 +51,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="PF Henry" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
@@ -78,12 +85,15 @@ const PROJECTS = [
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              Views
             </LinkButton>
           )}
+          
         </footer>
+        
     </div>
   </div>
+  
 </article>
     ))
   }
