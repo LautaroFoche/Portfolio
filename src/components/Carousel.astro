@@ -1,0 +1,72 @@
+---
+const images = [
+  '/images/image1.jpg',
+  '/images/image2.jpg',
+  '/images/image3.jpg',
+];
+let currentIndex = 0;
+
+const nextImage = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
+};
+
+const prevImage = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel();
+};
+
+const updateCarousel = () => {
+  if (typeof document !== 'undefined') {
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    carouselImages.forEach((img, index) => {
+      (img as HTMLElement).style.display = index === currentIndex ? 'block' : 'none';
+    });
+  }
+};
+
+if (typeof window !== 'undefined') {
+  setTimeout(() => updateCarousel(), 0);
+}
+---
+
+<style>
+  .carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 100%;
+    display: none;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+</style>
+
+<div class="carousel-container">
+  {images.map((image, index) => (
+    <img src={image} class="carousel-image" style={{ display: index === 0 ? 'block' : 'none' }} />
+  ))}
+  <button class="carousel-button prev">❮</button>
+  <button class="carousel-button next">❯</button>
+</div>
