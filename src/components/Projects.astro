@@ -4,13 +4,14 @@ import Python from "./icons/Python.astro"
 import PowerBI from "./icons/PowerBI.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
-import SQL from "./icons/SQL.astro"
+import Figma from "./icons/Figma.astro"
+import SQLcopy from "./icons/SQLcopy.astro"
 
 
 const TAGS = {
   PYTHON: {
     name: "Python",
-    class: "bg-black text-white",
+    class: "bg-[#191c27] text-white",
     icon: Python,
   },
   POWERBI: {
@@ -19,9 +20,14 @@ const TAGS = {
     icon: PowerBI,
   },
   SQL: {
-    name: "SQL Server",
-    class: "bg-[#ffffff] text-black",
-    icon: SQL,
+    name: "SQL",
+    class: "bg-[#cdcfd1] text-black",
+    icon: SQLcopy,
+  },
+  Figma: {
+    name: "Figma",
+    class: "bg-[#191c27] text-white",
+    icon: Figma,
   },
 }
 const PROJECTS = [
@@ -32,7 +38,7 @@ const PROJECTS = [
     link: "",
     github: "https://github.com/Floryofre/SmartPro_Analytics",
     image: "https://github.com/LautaroFoche/portfolio/raw/master/src/components/img/NBA1.png",
-    tags: [TAGS.PYTHON, TAGS.POWERBI, TAGS.SQL],
+    tags: [TAGS.PYTHON, TAGS.POWERBI, TAGS.SQL, TAGS.Figma],
   },
   {
     title: "Expansion estrategica de laboratorio BioGenesys",
